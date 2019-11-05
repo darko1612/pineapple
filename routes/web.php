@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('/profil', 'ProfileController@index');
+
+Route::get('/rezervacije', 'ReservationController@index');
+
+Route::get('/oglasi', 'AddController@index');
+
+Route::get('/desavanja', 'HappeningController@index');
+
+//Route::get('/registracija', 'RegisterController::RegistersUsers');
+
+
+
+Auth::routes();
+
+Route::get('/registracija', 'HomeController@index')->name('registracija');
